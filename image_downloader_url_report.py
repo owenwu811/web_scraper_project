@@ -8,7 +8,7 @@ from urllib.parse import urljoin
 
 # Set up logging
 dir_path = "/home/chatgpt/custom_utilities/utility_library/tmp/image_downloader"
-logging.basicConfig(filename=os.path.join(dir_path, "image_downloader.log"), level=logging.INFO)
+logging.basicConfig(filename=os.path.join(dir_path, "image_downloader_url_report.log"), level=logging.INFO)
 
 def download_images(url):
     try:
@@ -36,6 +36,12 @@ def download_images(url):
             with open(img_file, "wb") as f:
                 f.write(img_data)
             logging.info(f"Downloaded image {img_file}")
+        # Write the image URLs to a text file
+        with open(os.path.join(dir_path, "image_urls.txt"), "w") as f:
+            for img in img_tags:
+                img_url = img.get("src")
+                img_url = urljoin(url, img_url)
+                f.write(f"http://45.79.209.206:8000/{os.path.basename(img_url.split('/', -1)[-1])}\n")
     except Exception as e:
         logging.error(f"Error downloading images: {e}")
 
