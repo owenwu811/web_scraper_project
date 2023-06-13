@@ -12,6 +12,9 @@ logging.basicConfig(filename=os.path.join(dir_path, "image_downloader.log"), lev
 
 def download_images(url):
     try:
+        # Delete the contents of the image_web_server directory
+        for filename in os.listdir(os.path.join(dir_path, "image_web_server")):
+            os.remove(os.path.join(dir_path, "image_web_server", filename))
         # Send a GET request to the URL
         response = requests.get(url)
         # Parse the HTML content of the page with BeautifulSoup
@@ -33,6 +36,12 @@ def download_images(url):
             with open(img_file, "wb") as f:
                 f.write(img_data)
             logging.info(f"Downloaded image {img_file}")
+        # Write the image URLs to a text file
+        with open(os.path.join(dir_path, "image_urls.txt"), "w") as f:
+            for img in img_tags:
+                img_url = img.get("src")
+                img_url = urljoin(url, img_url)
+                f.write(f"http://<your-server-ip>:8000/{os.path.basename(img_url.split(\"/\", -1)[-1])}\n")
     except Exception as e:
         logging.error(f"Error downloading images: {e}")
 
