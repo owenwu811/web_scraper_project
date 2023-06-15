@@ -27,7 +27,7 @@ def solve_captcha(api_key, captcha_file):
 
 # Main function
 if __name__ == '__main__':
-    api_key = '848753b678aff0d777eda247ef9aa6f0'
+    api_key = os.environ.get('ANTI_CAPTCHA_API_KEY')
     captcha_file = sys.argv[1]
     captcha_text = solve_captcha(api_key, captcha_file)
     if captcha_text:

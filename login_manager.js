@@ -4,7 +4,10 @@ const util = require('util');
 
 const writeFile = util.promisify(fs.writeFile);
 
-async function loginManager(url, username, password) {
+async function loginManager(url) {
+  const username = process.env.USERNAME;
+  const password = process.env.PASSWORD;
+
   console.log('Launching browser...');
   const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
   console.log('Browser launched.');
@@ -34,4 +37,4 @@ async function loginManager(url, username, password) {
   console.log('Browser closed.');
 }
 
-loginManager(process.argv[2], process.argv[3], process.argv[4]).catch(err => console.error(err));
+loginManager(process.argv[2]).catch(err => console.error(err));
