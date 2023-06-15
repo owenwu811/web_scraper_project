@@ -1,35 +1,47 @@
-import os
 import sys
-import time
+import logging
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
-# Setup Chrome options
+# Set up logging
+logging.basicConfig(filename='/home/chatgpt/custom_utilities/utility_library/tmp/javascript_executor.log', level=logging.INFO)
+
+# Set up Chrome options
 chrome_options = Options()
-chrome_options.add_argument("--headless")
+chrome_options.add_argument("--headless") # Ensure GUI is off
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
 
-# Setup WebDriver
-webdriver_service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=webdriver_service, options=chrome_options)
+# Set path to chromedriver as per your configuration
+webdriver_service = Service('/usr/bin/chromedriver')
 
-# URL to execute JS
+# Get URL and JavaScript command from command line arguments
 url = sys.argv[1]
+js_command = sys.argv[2]
 
-# Navigate to URL
-driver.get(url)
+logging.info(f"Starting JavaScript executor for URL: {url} with command: {js_command}")
 
-# Wait for JS to load
-time.sleep(5)
+try:
+    # Initialize webdriver
+    driver = webdriver.Chrome(service=webdriver_service, options=chrome_options)
 
-# Execute JS
-result = driver.execute_script("return document.documentElement.outerHTML")
+    logging.info("Navigating to URL...")
+    # Open URL
+    driver.get(url)
 
-# Save result to file
-with open("/home/chatgpt/custom_utilities/utility_library/tmp/javascript_executor_output.txt", "w") as file:
-    file.write(result)
+    logging.info("Executing JavaScript command...")
+    # Execute JavaScript command
+    result = driver.execute_script(js_command)
 
-# Close WebDriver
-driver.quit()
+    logging.info(f"JavaScript command executed. Result: {result}")
+
+    driver.quit()
+    logging.info("Script completed.")
+
+except Exception as e:
+    logging.error(f"Error occurred: {e}")
