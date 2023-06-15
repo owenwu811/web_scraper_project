@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "html-to-json": "^0.6.0",
+    "puppeteer": "^20.7.1"
+  }
+}
