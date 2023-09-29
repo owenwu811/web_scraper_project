@@ -1,8 +1,4 @@
-import os
-import sys
-import time
-import logging
-import requests
+import os, sys, logging, requests
 
 # Set up logging
 log_filename = '/home/chatgpt/custom_utilities/utility_library/tmp/adaptive_scraping.log'
@@ -16,9 +12,7 @@ def adaptive_get(url, min_delay=1, max_delay=5):
     delay = min_delay
     while True:
         try:
-            start_time = time.time()
-            response = requests.get(url)
-            response_time = time.time() - start_time
+            start_time, response, response_time = time.time(), requests.get(url), time.time() - start_time
             if response.status_code == 200:
                 return response
             elif response.status_code == 429:
