@@ -1,7 +1,4 @@
-import requests
-import sys
-import time
-import logging
+import requests, sys, time, logging
 
 # Setup logging
 log_filename = '/home/chatgpt/custom_utilities/utility_library/tmp/dynamic_scraping_strategy.log'

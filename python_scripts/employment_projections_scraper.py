@@ -1,6 +1,4 @@
-import os
-import sys
-import time
+import os, sys, time, logging
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -11,7 +9,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.alert import Alert
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-import logging
 
 # Setup logging
 logging.basicConfig(filename='/home/chatgpt/custom_utilities/utility_library/tmp/employment_projections_scraper.log', level=logging.INFO, format='%(asctime)s %(message)s')

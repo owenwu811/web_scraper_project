@@ -1,5 +1,4 @@
-import sys
-import imgkit
+import sys, imgkit
 
 # Get the URL from the command line arguments
 url = sys.argv[1]

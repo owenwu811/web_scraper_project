@@ -1,9 +1,5 @@
-import os
-import requests
+import os, requests, logging, sys, base64
 from bs4 import BeautifulSoup
-import logging
-import sys
-import base64
 from urllib.parse import urljoin
 
 # Set up logging

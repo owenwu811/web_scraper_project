@@ -1,8 +1,5 @@
-import requests
+import requests, os, logging, sys
 from bs4 import BeautifulSoup
-import os
-import logging
-import sys
 from textblob import TextBlob
 
 # Set up logging

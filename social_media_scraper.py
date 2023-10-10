@@ -1,5 +1,4 @@
-import sys
-import requests
+import sys, requests
 from bs4 import BeautifulSoup
 
 # Get the URL from the command line arguments

@@ -1,7 +1,4 @@
-import os
-import sys
-import whois
-import logging
+import os, sys, whois, logging
 from datetime import datetime
 
 # Set up logging

@@ -1,8 +1,4 @@
-import requests
-import json
-import sys
-import os
-import logging
+import requests, json, sys, os, logging
 from datetime import datetime
 
 # Setup logging

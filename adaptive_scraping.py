@@ -1,8 +1,4 @@
-import os
-import sys
-import time
-import logging
-import requests
+import os, sys, logging, time, requests
 
 # Set up logging
 log_filename = '/home/chatgpt/custom_utilities/utility_library/tmp/adaptive_scraping.log'

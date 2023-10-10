@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-import sys
-import logging
+import sys, logging
 
 # Setup logging
 log_filename = '/home/chatgpt/custom_utilities/utility_library/tmp/data_visualizer.log'

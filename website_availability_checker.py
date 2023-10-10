@@ -1,7 +1,4 @@
-import requests
-import sys
-import os
-import logging
+import requests, sys, os, logging
 
 # Setup logging
 log_filename = '/home/chatgpt/custom_utilities/utility_library/tmp/website_availability_checker.log'

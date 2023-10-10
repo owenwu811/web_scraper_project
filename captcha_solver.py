@@ -1,8 +1,4 @@
-import os
-import sys
-import time
-import logging
-import requests
+import os, sys, time, logging, requests
 from python_anticaptcha import AnticaptchaClient, ImageToTextTask
 
 # Set up logging

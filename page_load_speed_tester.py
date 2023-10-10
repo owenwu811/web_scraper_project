@@ -1,9 +1,4 @@
-import os
-import sys
-import time
-import logging
-import requests
-
+import os, sys, time, logging, requests
 # Set up logging
 log_filename = '/home/chatgpt/custom_utilities/utility_library/tmp/page_load_speed_tester.log'
 logging.basicConfig(filename=log_filename, level=logging.INFO, format='%(asctime)s %(message)s')

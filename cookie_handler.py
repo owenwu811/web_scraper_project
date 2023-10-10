@@ -1,7 +1,4 @@
-import requests
-import sys
-import logging
-
+import requests, sys, logging
 # Setup logging
 log_filename = '/home/chatgpt/custom_utilities/utility_library/tmp/cookie_handler.log'
 logging.basicConfig(filename=log_filename, level=logging.INFO, format='%(asctime)s %(message)s')

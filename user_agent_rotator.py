@@ -1,7 +1,4 @@
-import requests
-import random
-import logging
-
+import requests, random, logging
 # Setup logging
 log_filename = '/home/chatgpt/custom_utilities/utility_library/tmp/user_agent_rotator.log'
 logging.basicConfig(filename=log_filename, level=logging.INFO, format='%(asctime)s %(message)s')

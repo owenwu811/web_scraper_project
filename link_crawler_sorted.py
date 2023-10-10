@@ -1,8 +1,5 @@
-import requests
+import requests, re, sys, os
 from bs4 import BeautifulSoup
-import re
-import sys
-import os
 
 def get_links(url):
     try:

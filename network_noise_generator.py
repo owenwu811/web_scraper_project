@@ -1,6 +1,4 @@
-import requests
-import random
-import time
+import requests, random, time
 
 # List of URLs to generate network noise
 urls = [

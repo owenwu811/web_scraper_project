@@ -1,6 +1,4 @@
-import requests
-import itertools
-import logging
+import requests, itertools, logging
 from datetime import datetime
 
 # Setup logging

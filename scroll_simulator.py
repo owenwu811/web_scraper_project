@@ -1,11 +1,9 @@
-import time
+import time, sys, logging
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import sys
-import logging
 
 # Set up logging
 logging.basicConfig(filename="/home/chatgpt/custom_utilities/utility_library/tmp/scroll_simulator.log", level=logging.INFO)

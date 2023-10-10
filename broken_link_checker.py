@@ -1,5 +1,4 @@
-import os
-import requests
+import os, requests
 from bs4 import BeautifulSoup
 
 output_dir = "/home/chatgpt/custom_utilities/utility_library/tmp/broken_link_checker_output"

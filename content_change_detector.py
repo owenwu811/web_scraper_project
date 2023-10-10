@@ -1,8 +1,4 @@
-import requests
-import hashlib
-import time
-import sys
-import logging
+import requests, hashlib, time, sys, logging
 
 # Setup logging
 log_filename = '/home/chatgpt/custom_utilities/utility_library/tmp/content_change_detector.log'

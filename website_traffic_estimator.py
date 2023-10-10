@@ -1,7 +1,4 @@
-import os
-import sys
-import logging
-import requests
+import os, sys, logging, requests
 from bs4 import BeautifulSoup
 
 # Set up logging

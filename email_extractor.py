@@ -1,6 +1,4 @@
-import os
-import re
-import requests
+import os, re, requests
 from bs4 import BeautifulSoup
 
 output_dir = "/home/chatgpt/custom_utilities/utility_library/tmp/email_extractor_output"

@@ -1,8 +1,5 @@
-import requests
 from bs4 import BeautifulSoup
-import logging
-import os
-import sys
+import logging, os, sys, requests
 
 # Set up logging
 output_dir = "/home/chatgpt/custom_utilities/utility_library/tmp/metadata_extractor"
